@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 19px; /* Augmente la taille de base de 16px à 18px */
+  }
+  
+  body {
+    @apply antialiased;
+    font-size: 1rem; /* Utilise la nouvelle taille de base */
+    line-height: 1.6; /* Améliore l'espacement des lignes */
+  }
+  
+  /* Ajustements pour les éléments de texte */
+  h1 { @apply text-4xl font-bold; }
+  h2 { @apply text-3xl font-semibold; }
+  h3 { @apply text-2xl font-medium; }
+  h4 { @apply text-xl font-medium; }
+  h5 { @apply text-lg font-medium; }
+  h6 { @apply text-base font-medium; }
+  
+  p { @apply text-base leading-relaxed; }
+  
+  /* Améliore la lisibilité des petits textes */
+  .text-xs { font-size: 0.8rem; }
+  .text-sm { font-size: 0.9rem; }
+  .text-base { font-size: 1rem; }
+  .text-lg { font-size: 1.15rem; }
+  .text-xl { font-size: 1.3rem; }
+  .text-2xl { font-size: 1.6rem; }
+  .text-3xl { font-size: 2rem; }
+  .text-4xl { font-size: 2.5rem; }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-full font-semibold transition-colors text-base;
+  }
+  
+  .btn-primary {
+    @apply bg-green-600 text-white hover:bg-green-700;
+  }
+
+  .carousel-dot {
+    @apply w-3 h-3 rounded-full bg-white/50 transition-colors;
+  }
+
+  .carousel-dot.active {
+    @apply bg-white;
+  }
+  
+  /* Styles pour les formulaires avec des tailles plus grandes */
+  .form-input {
+    @apply px-4 py-3 text-base rounded-xl border-2 border-gray-200;
+  }
+  
+  .form-label {
+    @apply text-base font-medium text-gray-700 mb-2;
+  }
+  
+  /* Styles pour les boutons avec des tailles plus grandes */
+  .btn-lg {
+    @apply px-8 py-4 text-lg font-semibold;
+  }
+  
+  .btn-md {
+    @apply px-6 py-3 text-base font-medium;
+  }
+  
+  .btn-sm {
+    @apply px-4 py-2 text-sm font-medium;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
